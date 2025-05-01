@@ -1,5 +1,5 @@
 import React from "react";
-import "./FloatingInput.css"; 
+import "./FloatingInput.css";
 
 const FloatingInput = ({ label, type, name }) => {
   return (

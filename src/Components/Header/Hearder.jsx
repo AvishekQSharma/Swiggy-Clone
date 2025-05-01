@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/Zesty.png";
 import { RiArrowDownSLine } from "react-icons/ri";
@@ -11,20 +11,17 @@ import SideBar from "../SideBar/SideBar";
 import LeftSideBar from "../SideBar/LeftSideBar";
 
 const Header = () => {
-  const [showLeftSideBar, setShowLeftSideBar] = useState(false); 
-  const [showRightSideBar, setShowRightSideBar] = useState(false); 
+  const [showLeftSideBar, setShowLeftSideBar] = useState(false);
+  const [showRightSideBar, setShowRightSideBar] = useState(false);
 
-  
   const toggleLeftSideBar = () => {
     setShowLeftSideBar(!showLeftSideBar);
   };
-
- 
   const toggleRightSideBar = () => {
     setShowRightSideBar(!showRightSideBar);
   };
   const toggleSideBar = () => {
-    setShowSideBar(!showSideBar); 
+    setShowSideBar(!showSideBar);
   };
 
   const link = [
@@ -42,24 +39,22 @@ const Header = () => {
     {
       icon: <IoHelpBuoyOutline />,
       name: "Help",
-      link: "/help",
+      link: "/Helps",
     },
     {
       icon: <FiUser />,
       name: "SignIn",
-      
     },
     {
       icon: <BsCart2 />,
       name: "Cart",
       sup: "(0)",
-      link: "/Cart",
+      link: "/Carts",
     },
   ];
 
   return (
     <>
-     
       {(showLeftSideBar || showRightSideBar) && (
         <div
           className="Black-Overlay w-full h-full fixed z-40 bg-black opacity-50"
@@ -70,7 +65,6 @@ const Header = () => {
         ></div>
       )}
 
-      
       <div
         className={`fixed top-0 right-0 w-[754px] h-full bg-white z-50 duration-500 transform ${
           showRightSideBar ? "translate-x-0" : "translate-x-full"
@@ -79,7 +73,6 @@ const Header = () => {
         <SideBar hideSideMenu={toggleSideBar} />
       </div>
 
-   
       <div
         className={`fixed top-0 left-0 w-[650px] h-full  bg-white z-50 duration-500 transform ${
           showLeftSideBar ? "translate-x-0" : "-translate-x-full"
@@ -88,15 +81,12 @@ const Header = () => {
         <LeftSideBar hideSideMenu={toggleLeftSideBar} />
       </div>
 
-     
       <header className="p-[15px] shadow-xl">
         <div className="max-w-[1200px] mx-auto flex items-center">
-       
           <div className="w-[70px] hover:scale-125 transition-all duration-500 cursor-pointer">
             <img src={logo} alt="Logo" className="w-full" />
           </div>
 
-       
           <div>
             <span className="font-bold border-b-[3px] pr-3">Kolkata</span>
             Thakurpukur, India
@@ -123,7 +113,7 @@ const Header = () => {
                     className="flex items-center gap-2"
                     onClick={() => {
                       if (link.name === "SignIn") {
-                        toggleLeftSideBar(); 
+                        toggleLeftSideBar();
                       }
                     }}
                   >

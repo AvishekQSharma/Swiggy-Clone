@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FloatingInput from "./FloatingInput";
+import HandleCaptcha from "./handleCaptcha";
 
 const LeftSideBar = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -54,7 +55,7 @@ const LeftSideBar = () => {
           </div>
         ) : (
           <div className="border-1">
-            <FloatingInput label="Phone Number" type="text" name="phone"  />
+            <FloatingInput label="Phone Number" type="text" name="phone" />
             <FloatingInput label="Full Name" type="text" name="fullname" />
             <FloatingInput label="Email" type="email" name="Email" />
           </div>
